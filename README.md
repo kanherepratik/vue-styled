@@ -24,4 +24,4 @@ yarn lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Typescript coding guidelines
-see [https://github.com/kanherepratik/vue-styled/blob/master/ts_guide.md]
+see [Typescript coding guidelines](https://github.com/kanherepratik/vue-styled/blob/master/ts_guide.md)
