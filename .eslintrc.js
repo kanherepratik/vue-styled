@@ -5,13 +5,15 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:vue/recommended',
+        'plugin:prettier/recommended',
+        'plugin:vue/essential',
         '@vue/airbnb',
         '@vue/typescript/recommended',
-        'plugin:prettier/recommended',
+        '@vue/prettier/recommended'
     ],
     "parserOptions": {
         parser: '@typescript-eslint/parser',
+        extraFileExtensions: ".vue",
         "ecmaVersion": 2020,
         "sourceType": "module"
      },
@@ -91,14 +93,6 @@ module.exports = {
         ],
         'no-console': 'warn',
         'no-debugger': 'warn',
-        "vue/html-indent": ["error", 4,
-         {"attribute": 1, "closeBracket": 1, 
-            "alignAttributesVertically": true}],
-        "vue/singleline-html-element-content-newline": ["error", {
-            "ignoreWhenNoAttributes": true,
-            "ignoreWhenEmpty": true,
-        }]
-        
     },
     settings: {
         'import/extensions': ['.js', '.ts'],
@@ -107,7 +101,7 @@ module.exports = {
         },
         'import/resolver': {
             node: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx']
+                extensions: ['.js', '.jsx', '.ts', '.tsx', 'd.ts']
             }
         }
     },

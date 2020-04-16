@@ -25,3 +25,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Typescript coding guidelines
 see [Typescript coding guidelines](https://github.com/kanherepratik/vue-styled/blob/master/ts_guide.md)
+
+### Vue.js styleguide rules
+see [Vue.js styleguide](https://vuejs.org/v2/style-guide/#Rule-Categories)
