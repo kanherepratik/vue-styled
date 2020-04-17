@@ -27,7 +27,7 @@ When developing software as an organization, the value of the software produced 
 
 ```typescript
 // bad
-let greeting = 'Hello World!';
+let greeting = "Hello World!";
 
 // good
 let greeting = 'Hello World!';
