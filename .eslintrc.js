@@ -1,21 +1,20 @@
 module.exports = {
+    root: true,
+    env: {
+      node: true,
+    },
     extends: [
-        'airbnb/base',
-        'prettier/@typescript-eslint',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:prettier/recommended',
         'plugin:vue/essential',
         '@vue/airbnb',
         '@vue/typescript/recommended',
-        '@vue/prettier/recommended'
+        '@vue/prettier',
+        '@vue/prettier/@typescript-eslint'
     ],
     "parserOptions": {
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ".vue",
         "ecmaVersion": 2020,
-        "sourceType": "module"
+        "sourceType": "module",
+        project: ['./tsconfig.json']
      },
     plugins: ['@typescript-eslint'],
     rules: {
@@ -41,7 +40,7 @@ module.exports = {
             'error',
             {
                 selector: 'default',
-                format: ['camelCase']
+                format: ['camelCase','PascalCase']
             },
 
             {
@@ -58,7 +57,7 @@ module.exports = {
                 selector: 'memberLike',
                 modifiers: ['private'],
                 format: ['camelCase'],
-                leadingUnderscore: 'require'
+                leadingUnderscore: 'allow'
             },
 
             {
@@ -91,8 +90,8 @@ module.exports = {
                 }
             }
         ],
-        'no-console': 'warn',
-        'no-debugger': 'warn',
+        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     },
     settings: {
         'import/extensions': ['.js', '.ts'],
@@ -105,9 +104,15 @@ module.exports = {
             }
         }
     },
-    parserOptions: {
-        ecmaVersion: 2020,
-        tsconfigRootDir: '.',
-        project: ['./tsconfig.json']
-    }
+    overrides: [
+        {
+          files: [
+            '**/__tests__/*.{j,t}s?(x)',
+            '**/tests/unit/**/*.spec.{j,t}s?(x)',
+          ],
+          env: {
+            jest: true,
+          },
+        },
+      ],
 };
